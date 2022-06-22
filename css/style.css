@@ -8,5 +8,486 @@
 body {
   padding: 2rem;
   font-family: 'Courier New', Courier, monospace;
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  height: 100%;
+  width: 100%;
+  gap: 2rem;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .card {
+  height: 350px;
+  width: 100%;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  position: relative;
+}
+
+.container .card::before, .container .card::after {
+  content: "";
+  position: absolute;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.container .card-1 {
+  padding: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.container .card-1 h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.container .card-1 button {
+  background-color: transparent;
+  font-size: 1.2rem;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+.container .card-1::before {
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  height: 5px;
+  z-index: -1;
+}
+
+.container .card-1:hover::before {
+  height: 100%;
+}
+
+.container .card-1:hover, .container .card-1:hover button {
+  color: white !important;
+}
+
+.container .card-2 {
+  -webkit-box-shadow: 2px 3px 4px #a1a1a1;
+          box-shadow: 2px 3px 4px #a1a1a1;
+  border-radius: 30px;
+  height: 150px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-align: center;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.container .card-2 .content {
+  padding: 2rem;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.container .card-2 .content h3 {
+  margin-bottom: .7rem;
+}
+
+.container .card-2 .image {
+  position: absolute;
+  z-index: 2;
+  width: 400px;
+  height: 180px;
+  background-image: url("https://images.unsplash.com/photo-1655873003711-768c733efad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: -50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 30px;
+}
+
+.container .card-2:hover {
+  height: 250px;
+}
+
+.container .card-2:hover .content {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.container .card-3 {
+  padding: 2rem;
+  background-image: -webkit-gradient(linear, right top, left bottom, from(red), to(purple));
+  background-image: linear-gradient(top right, red, purple);
+  border-radius: 30px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .card-3 img {
+  width: 70%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  z-index: 2;
+}
+
+.container .card-3 .content {
+  opacity: 0;
+  -webkit-transform: translateX(65%);
+          transform: translateX(65%);
+  width: 250px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  color: white;
+}
+
+.container .card-3 .content p {
+  margin-block: 1rem;
+}
+
+.container .card-3 .content button {
+  background-color: white;
+  border-radius: 10px;
+  padding: .4rem .6rem;
+  border: none;
+  outline: none;
+}
+
+.container .card-3:hover img, .container .card-3:hover .content {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1;
+}
+
+.container .card-4 {
+  width: 300px;
+  -webkit-box-shadow: 2px 3px 4px #a8a8a8;
+          box-shadow: 2px 3px 4px #a8a8a8;
+  border-radius: 30px;
+}
+
+.container .card-4 .face {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 1rem;
+}
+
+.container .card-4 .face1 {
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+}
+
+.container .card-4 .face1 p {
+  margin-block: 1rem;
+}
+
+.container .card-4 .face1 button {
+  padding: .4rem .6rem;
+  background-color: white;
+  color: black;
+  border-radius: 3px;
+  border: 1px solid black;
+  outline: none;
+}
+
+.container .card-4 .face2 {
+  background-color: darkcyan;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.container .card-4 .face2 h1 {
+  font-size: 6rem;
+  margin: 0;
+  color: white;
+}
+
+.container .card-4:hover .face2 {
+  width: 65px;
+  height: 65px;
+  background-color: white;
+  border: 3px solid darkcyan;
+  border-radius: 50%;
+  top: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.container .card-4:hover .face2 h1 {
+  font-size: 2.5rem;
+  color: darkcyan;
+  font-weight: bolder;
+}
+
+.container .card-5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .card-5 .face {
+  -webkit-box-shadow: 4px 4px 20px #bcbcbc;
+          box-shadow: 4px 4px 20px #bcbcbc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  padding: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+
+.container .card-5 .face button {
+  margin-top: 1rem;
+}
+
+.container .card-5 .face2 {
+  color: white;
+  background-color: #555555;
+  font-size: 1.3rem;
+}
+
+.container .card-5 .face2 i {
+  font-size: 7rem;
+  margin-bottom: .6rem;
+}
+
+.container .card-5 .face1 {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: white;
+  padding: 1rem;
+}
+
+.container .card-5 .face1 button {
+  padding: .4rem .6rem;
+  border: 2px solid black;
+  outline: none;
+  background-color: white;
+}
+
+.container .card-5:hover .face1 {
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+.container .card-5:hover .face2 {
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+}
+
+.container .card-6 {
+  width: 80%;
+  height: 80%;
+  background-color: #5a5a5a;
+  color: white;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .card-6 h3:nth-of-type(2) {
+  color: orange;
+}
+
+.container .card-6::before, .container .card-6::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5a5a5a;
+  z-index: -1;
+}
+
+.container .card-6:hover::before {
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.container .card-6:hover::after {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.container .card-6 .image {
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  background-image: url("https://images.unsplash.com/photo-1522346513757-54c552451fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(1rem, 1rem);
+          transform: translate(1rem, 1rem);
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+
+.container .card-6 h3 {
+  margin-top: 1rem;
+}
+
+.container .card-6 h3:nth-of-type(2) {
+  margin-top: .2rem;
+}
+
+.container .card-6:hover .image {
+  height: calc(80% - 2rem);
+}
+
+.container .card-7 {
+  width: 60%;
+  background-image: url("https://images.unsplash.com/photo-1522346513757-54c552451fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container .card-7 .content {
+  position: absolute;
+  padding: 1rem .6rem;
+  left: 50%;
+  bottom: -80%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  -webkit-transform: translateX(-50%) scaleX(0.8);
+          transform: translateX(-50%) scaleX(0.8);
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  text-align: center;
+  padding-inline: 1rem;
+}
+
+.container .card-7 .content button {
+  margin-top: 1rem;
+  background-color: white;
+  border: 2px solid black;
+  outline: none;
+  padding: .4rem .6rem;
+}
+
+.container .card-7 .content h1 {
+  margin: 0 0 1rem 0;
+}
+
+.container .card-7:hover .content {
+  -webkit-transform: translateX(-50%) scaleX(1);
+          transform: translateX(-50%) scaleX(1);
+  bottom: 0;
 }
 /*# sourceMappingURL=style.css.map */
